@@ -10,6 +10,8 @@ import {
   Button
 } from "./components/styled/index";
 import owl from "./images/owl.svg";
+import JokeItem from "./components/JokeItem";
+
 
 type Flag = {
   nsfw: boolean;
@@ -57,9 +59,17 @@ const App = () => {
   const getJokes=async(event:React.FormEvent<HTMLFormElement>)=>{
     event.preventDefault()
 
-    const ENDPOINT=`${BASE_URL}?contains=${search}&amount=10`
+    const ENDPOINT=`${BASE_URL}&contains=${search}&amount=10`
     const {data}=await axios.get(ENDPOINT)
     console.log(data)
+    if(data.error){
+      setError(true)
+      setJokes([])
+    }else{
+      setError(false)
+      setJokes(data.jokes)
+    }
+    setSearch("")
   }
   return (
     <div>
@@ -77,6 +87,10 @@ const App = () => {
           />
           <Button type="submit">Submit</Button>
         </Form>
+        <div>
+          {error&& <p>Sorry, no jokes found</p>}
+          {jokes.length>0 && jokes.map((joke)=> <JokeItem key={joke.id} joke={joke}/>)}
+        </div>
       </Wrapper>
     </div>
   );
