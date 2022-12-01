@@ -1,14 +1,33 @@
 import React from 'react';
-import {CardWrapper, CardTop, CardBottom, Setup, Delivery} from "./styled/index"
+import {CardWrapper, CardTop, CardBottom, Setup, Delivery} from "./styled/index";
+import { Flag, Joke, FlagKeys } from "../common/types";
 
 interface JokeItemProps {
-  joke: Joke[];
+  joke: Joke;
 }
 
-const JokeItem:React.FC = ({joke}) => {
+const JokeItem:React.FC<JokeItemProps> = ({joke}) => {
+    const flags = Object.keys(joke.flags)
+      .filter((key) => joke.flags[key as FlagKeys])
+      .join(" , ");
   return (
-    <div>JokeItem</div>
-  )
+    <CardWrapper>
+      <CardTop>
+        {joke.type === "single" ? (
+          <p>{joke.joke}</p>
+        ) : (
+          <>
+            <Setup> {joke.setup} </Setup>
+            <Delivery> {joke.delivery} </Delivery>
+          </>
+        )}
+      </CardTop>
+      <CardBottom>
+        <p>{joke.category}</p>
+        <div>{flags}</div>
+      </CardBottom>
+    </CardWrapper>
+  );
 }
 
 export default JokeItem

@@ -11,35 +11,36 @@ import {
 } from "./components/styled/index";
 import owl from "./images/owl.svg";
 import JokeItem from "./components/JokeItem";
+import {Flag,Joke} from "./common/types"
 
 
-type Flag = {
-  nsfw: boolean;
-  religious: boolean;
-  political: boolean;
-  racist: boolean;
-  sexist: boolean;
-  explicit: boolean;
-};
+// type Flag = {
+//   nsfw: boolean;
+//   religious: boolean;
+//   political: boolean;
+//   racist: boolean;
+//   sexist: boolean;
+//   explicit: boolean;
+// };
 
-type Joke = {
-  id: number;
-  category:
-    | "Any"
-    | "Misc"
-    | "Programming"
-    | "Dark"
-    | "Pun"
-    | "Spooky"
-    | "Christmas";
-  flags: Flag;
-  setup?: string;
-  delivery?: string;
-  joke?: string;
-  safe: boolean;
-  lang: "cs" | "de" | "en" | "es" | "fr" | "pt";
-  type: "single" | "twopart";
-}; 
+// type Joke = {
+//   id: number;
+//   category:
+//     | "Any"
+//     | "Misc"
+//     | "Programming"
+//     | "Dark"
+//     | "Pun"
+//     | "Spooky"
+//     | "Christmas";
+//   flags: Flag;
+//   setup?: string;
+//   delivery?: string;
+//   joke?: string;
+//   safe: boolean;
+//   lang: "cs" | "de" | "en" | "es" | "fr" | "pt";
+//   type: "single" | "twopart";
+// }; 
 
 const BASE_URL =
   "https://v2.jokeapi.dev/joke/Any?blacklistFlags=religious";
