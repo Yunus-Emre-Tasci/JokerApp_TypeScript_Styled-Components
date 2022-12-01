@@ -5,8 +5,7 @@ interface WrapperProps{
     theme:DefaultTheme
 }
 
-const Wrapper =
-  styled.div<WrapperProps>`
+const Wrapper =styled.div<WrapperProps>`
   display: flex;
   flex-direction: column;
   align-items: center;

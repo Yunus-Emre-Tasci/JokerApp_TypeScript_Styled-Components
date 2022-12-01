@@ -6,9 +6,9 @@ const myTheme: DefaultTheme = {
 
   colors: {
     main: "#3C12FA",
-    secondary: "#8A2DE",
+    secondary: "#8A28DE",
     white:"#fff",
-    purple:"#532239C"
+    purple:"#53239C"
   },
 };
 
