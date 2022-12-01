@@ -1,6 +1,6 @@
 import React from 'react';
 import {CardWrapper, CardTop, CardBottom, Setup, Delivery} from "./styled/index";
-import { Flag, Joke, FlagKeys } from "../common/types";
+import { Joke, FlagKeys } from "../common/types";
 
 interface JokeItemProps {
   joke: Joke;

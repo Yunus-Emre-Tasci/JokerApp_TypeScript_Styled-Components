@@ -11,7 +11,7 @@ import {
 } from "./components/styled/index";
 import owl from "./images/owl.svg";
 import JokeItem from "./components/JokeItem";
-import {Flag,Joke} from "./common/types"
+import {Joke} from "./common/types"
 
 
 // type Flag = {
